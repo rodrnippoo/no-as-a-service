@@ -132,6 +132,6 @@ Here are some projects and websites that creatively integrate [no-as-a-service](
 
 ---
 
-## 🗒️ Personal Notes (fork)
+## 🗒️ Personal Notes
 
-> Forked this mainly to tinker with the reasons list and maybe wire it up to a Slack bot at work. Running locally on port `4000` to avoid conflicts with other stuff I have running. Change `PORT=4000 npm start` or just set it in a `.env` file if you add `dotenv`.
+> Forked this for a small side project — wanted to self-host it locally on port `8080` instead of the default `3000`. Running `PORT=8080 npm start` does the trick. Might add a `/no/count` endpoint someday to return the total number of reasons available.
