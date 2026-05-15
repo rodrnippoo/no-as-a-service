@@ -134,4 +134,4 @@ Here are some projects and websites that creatively integrate [no-as-a-service](
 
 ## 🗒️ Personal Notes
 
-> Forked this for a small side project — wanted to self-host it locally on port `8080` instead of the default `3000`. Running `PORT=8080 npm start` does the trick. Might add a `/no/count` endpoint someday to return the total number of reasons available.
+> Forked this for a small side project — using it as the backend for a "Should I do it?" button on my personal site. Planning to run it locally on port `4242` instead of the default `3000` to avoid conflicts with other dev servers I usually have running.
