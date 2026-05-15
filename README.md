@@ -134,4 +134,4 @@ Here are some projects and websites that creatively integrate [no-as-a-service](
 
 ## 🗒️ Personal Notes
 
-> Forked this for a small side project — using it as the backend for a "Should I do it?" button on my personal site. Planning to run it locally on port `4242` instead of the default `3000` to avoid conflicts with other dev servers I usually have running.
+> Forked this for a little side project — wanted to embed random rejection reasons into a fun "task prioritization" tool I'm building. The default port `3000` conflicts with another service I run locally, so I'll be starting it with `PORT=4242 npm start` on my machine.
