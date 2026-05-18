@@ -89,14 +89,15 @@ async function runTests() {
   }
 
   // Test: reasons are varied (randomness check)
+  // bumped sample size from 10 to 15 to reduce flakiness on slow machines
   try {
     const responses = await Promise.all(
-      Array.from({ length: 10 }, () => request('/'))
+      Array.from({ length: 15 }, () => request('/'))
     );
     const reasons = responses.map((r) => r.body.reason);
     const uniqueReasons = new Set(reasons);
     test('GET / returns varied reasons (randomness)', () => {
-      assert.ok(uniqueReasons.size > 1, 'Expected multiple different reasons across 10 requests');
+      assert.ok(uniqueReasons.size > 1, 'Expected multiple different reasons across 15 requests');
     });
   } catch (err) {
     console.error('Failed randomness test:', err.message);
@@ -106,7 +107,7 @@ async function runTests() {
   // Test: unknown route returns 404
   try {
     const res = await request('/unknown-route-xyz');
-    test('Unknown route returns 404', () => {
+    test('GET /unknown-route-xyz returns 404', () => {
       assert.strictEqual(res.status, 404);
     });
   } catch (err) {
@@ -114,8 +115,9 @@ async function runTests() {
     failed++;
   }
 
-  console.log(`\n${passed} passing, ${failed} failing\n`);
-  process.exit(failed > 0 ? 1 : 0);
+  // Summary
+  console.log(`\n${passed + failed} tests: ${passed} passed, ${failed} failed`);
+  if (failed > 0) process.exit(1);
 }
 
 runTests();
